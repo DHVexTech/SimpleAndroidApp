@@ -1,6 +1,5 @@
 package com.example.textviewkotlin
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,16 +13,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         editTextValue = findViewById(R.id.editText);
+        print(editTextValue);
     }
 
-    fun changeLayout(view: View) {
-        print("changeLayout method called");
+    fun setLayoutToSecondActivity(view: View) {
         val text = editTextValue!!.text.toString();
         val intent = Intent(this, SecondActivity::class.java)
         intent.putExtra(EXTRA_MESSAGE, text);
         startActivity(intent);
     }
-
 }
